@@ -1,21 +1,15 @@
-# Lasagna
+# Elixir
 
-**TODO: Add description**
+**Code-Camp-From-Exercism**
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `lasagna` to your list of dependencies in `mix.exs`:
+- Every task is written in their own file inside the lib directory
+- Every test cases for the task is inside test
 
-```elixir
-def deps do
-  [
-    {:lasagna, "~> 0.1.0"}
-  ]
-end
-```
+To test run :
+`mix test`
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/lasagna>.
-
