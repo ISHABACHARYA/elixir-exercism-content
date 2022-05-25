@@ -17,3 +17,4 @@ defmodule GuessingGame do
   def compare(a, b) when b - a > 1, do: @response.greater
   def compare(_a, :no_guess), do: @response.no_guess
 end
+  
