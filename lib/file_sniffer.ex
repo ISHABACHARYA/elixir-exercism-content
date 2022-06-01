@@ -33,13 +33,13 @@ defmodule FileSniffer do
   ]
 
   def type_from_extension(ext) do
-  [media_type] = Enum.filter(@file_type, fn element -> element.extension == ext end)
+    [media_type] = Enum.filter(@file_type, fn element -> element.extension == ext end)
     Map.fetch!(media_type, :media_type)
-
   end
 
   def type_from_binary(file_binary) do
     <<head::binary-size(8), body::binary>> = file_binary
+
     case head do
       <<0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A>> -> "image/png"
       <<0x7F, 0x45, 0x4C, 0x46, _::binary>> -> "application/octet-stream"
@@ -48,6 +48,7 @@ defmodule FileSniffer do
       <<0x42, 0x4D, _::binary>> -> "image/bmp"
     end
   end
+
   def verify(file_binary, extension) do
     if type_from_binary(file_binary) == type_from_extension(extension) do
       {:ok, type_from_extension(extension)}
